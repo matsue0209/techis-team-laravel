@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>会員一覧表示</h1>
-
+    <a href="{{ route('user.create') }}">{{ _('会員登録') }}></a>
     <table>
             <tr>
                 <th>ID</th>
