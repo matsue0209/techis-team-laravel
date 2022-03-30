@@ -24,7 +24,7 @@
     </div>
     <button type="submit">登録</button>
 </form>
-<a href="{{ route('member.index') }}">{{_('一覧へ戻る') }}'</a>
+
 
 </body>
 </html>
