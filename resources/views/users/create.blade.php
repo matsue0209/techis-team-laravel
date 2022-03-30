@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>新規登録</title>
+    <title>会員登録</title>
 </head>
 <body>
-    <h1>新規登録</h1>
-    <form method="POST" acthion"">
+    <h1>会員登録</h1>
+    <form method="POST" acthion">
     @csrf
     <div>
         <label for="form-name">名前</label>
@@ -24,6 +24,7 @@
     </div>
     <button type="submit">登録</button>
 </form>
+<a href="{{ route('member.index') }}">{{_('一覧へ戻る') }}'</a>
 
 </body>
 </html>

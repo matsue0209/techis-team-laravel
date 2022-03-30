@@ -37,4 +37,16 @@ class UserController extends Controller
         {
             return view('users/create');
         }
+
+        public function userCreate(Request $request)
+        {
+            // 新しくレコードを追加する
+            $user = new user();
+            $user->name = $request->name;
+            $user->tel = $request->tel;
+            $user->email = $request->email;
+            $user->save();
+
+            return redirect('index');
+        }
 }
