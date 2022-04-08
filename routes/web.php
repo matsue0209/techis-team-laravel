@@ -19,3 +19,5 @@ Route::get('/', function () {
 });
 
 Route::get('/user', [App\Http\Controllers\UserController::class, 'index']);
+
+Route::get('/create',[App\Http\Controllers\UserController::class,'create']);
