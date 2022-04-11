@@ -18,7 +18,7 @@ class UserController extends Controller
         {
             $users = User::orderBy('created_at', 'asc')->get();
             return view('users.index', [
-                'user' => $users,
+                'users' => $users,
             ]);
         }
 
