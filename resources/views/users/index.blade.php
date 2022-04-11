@@ -61,5 +61,7 @@
         @endforeach
     </table>
 
+
+    <a href="http://127.0.0.1:8000/create">新規登録先はこちら</a>
 </body>
 </html>
