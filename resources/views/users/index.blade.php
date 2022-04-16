@@ -42,7 +42,10 @@
 <body>
     <h1 class="center-block">会員一覧表示</h1>
 
-    <table class="table" table-striped table-hover>
+    <table class="table table-bordered table-striped table-hover">
+    
+    <a href="http://127.0.0.1:8000/create">新規登録先はこちら</a>
+    <a class="float-right" href="text.php">修正先はこちら</a>
       <thead>
             <tr>
                 <th scope="col">ID</th>
@@ -51,6 +54,7 @@
                 <th scope="col">メールアドレス</th>
             </tr>
       </thead>
+      <tbody>
         @foreach ($users as $user)
             <tr>
                 <td>{{$user->id}}</td>
@@ -59,9 +63,10 @@
                 <td>{{$user->email}}</td>
             </tr>
         @endforeach
+
+      </tbody>
     </table>
 
-
-    <a href="http://127.0.0.1:8000/create">新規登録先はこちら</a>
+   
 </body>
 </html>
