@@ -42,10 +42,13 @@
 <body>
     <h1 class="center-block">会員一覧表示</h1>
 
-    <table class="table table-bordered table-striped table-hover">
+    <table class="table table-bordered table-hover">
     
-    <a href="http://127.0.0.1:8000/create">新規登録先はこちら</a>
+    <a href="{{route('create,$user_id')}}">新規登録先はこちら</a>
+    <!---
     <a class="float-right" href="text.php">修正先はこちら</a>
+    --->
+
       <thead>
             <tr>
                 <th scope="col">ID</th>
@@ -61,6 +64,17 @@
                 <td>{{$user->name}}</td>
                 <td>{{$user->telephone}}</td>
                 <td>{{$user->email}}</td>
+                <td>
+                    <!-- TODO: 削除ボタン -->
+                    <form action="{{ url('user/'.$user->id) }}" method="POST">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
+
+                        <button type="submit" id="delete-user-{{ $user->id }}" class="btn btn-danger">
+                            <i class="fa fa-btn fa-trash"></i>編集
+                        </button>
+                    </form>
+                </td>
             </tr>
         @endforeach
 

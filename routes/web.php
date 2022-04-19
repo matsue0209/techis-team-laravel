@@ -18,6 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/user', [App\Http\Controllers\UserController::class, 'index']);
-
-Route::get('/create',[App\Http\Controllers\UserController::class,'create']);
+Route::get('/user', [App\Http\Controllers\UserController::class, 'index'])->name('users');
+Route::get('/edit{$user_id}',[App\Http\Controllers\UserController::class,'edit'])->name('edit');
+Route::post('/user', [App\Http\Controllers\UserController::class, 'update'])->name('update');
