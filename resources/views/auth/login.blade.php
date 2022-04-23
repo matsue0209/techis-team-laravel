@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <h1 class="text-center font-weight-bold mt-5 mb-5">管理者用ログイン</h1>
+            <h1 class="text-center font-weight-bold mt-5 mb-5">ログイン</h1>
 
                 <div class="w-75 m-auto">
                     <form method="POST" action="{{ route('login') }}">
