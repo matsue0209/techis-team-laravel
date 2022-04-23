@@ -44,7 +44,7 @@
 
     <table class="table table-bordered table-hover">
     
-    <a href="{{route('create,$user_id')}}">新規登録先はこちら</a>
+    <a href="{{route('users')}}">新規登録先はこちら</a>
     <!---
     <a class="float-right" href="text.php">修正先はこちら</a>
     --->
@@ -65,15 +65,7 @@
                 <td>{{$user->telephone}}</td>
                 <td>{{$user->email}}</td>
                 <td>
-                    <!-- TODO: 削除ボタン -->
-                    <form action="{{ url('user/'.$user->id) }}" method="POST">
-                        {{ csrf_field() }}
-                        {{ method_field('DELETE') }}
-
-                        <button type="submit" id="delete-user-{{ $user->id }}" class="btn btn-danger">
-                            <i class="fa fa-btn fa-trash"></i>編集
-                        </button>
-                    </form>
+                    <a href="/user/edit/{{$user->id}}" class="btn btn-danger"><i class="fa fa-btn fa-trash"></i>編集</a>     
                 </td>
             </tr>
         @endforeach

@@ -35,26 +35,28 @@ class UserController extends Controller
 
         public function create(Request $request)
         {
-            return view('users/create');
+            return view('user/create');
         }
 
 
-        public function edit(Request $request, int $user_id)
-        {
+        public function edit($user_id)
+        {   
+
             $user=User::find($user_id);
-            return view('users/edit',['users'=> Auth::user() ]);
-            
+            // dd($user);
+           // return view('users/edit',['users'=> Auth::user() ]);
+           return view('users/edit',['users'=> $user ]);
         }
 
-        public function update(Request $request, int $user_id){
+        public function update(Request $request){
         
-        $user_form = $request->all();
-        $user = Auth::user();
-        //不要な「_token」の削除
-        unset($user_form['_token']);
+        $user= User::find($request->id);
+        $user->name = $request->input('name');
         //保存
-        $user->fill($user_form)->save();
+        $user->save();
         //リダイレクト
-        return redirect('user/index');
+        return redirect('/user');
         }
+
+        
 }

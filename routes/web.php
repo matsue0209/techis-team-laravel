@@ -14,10 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+    // return view('welcome');
+// });
 
 Route::get('/user', [App\Http\Controllers\UserController::class, 'index'])->name('users');
-Route::get('/edit{$user_id}',[App\Http\Controllers\UserController::class,'edit'])->name('edit');
-Route::post('/user', [App\Http\Controllers\UserController::class, 'update'])->name('update');
+Route::get('/user/edit/{user_id}',[App\Http\Controllers\UserController::class,'edit']);
+Route::post('/user/update', [App\Http\Controllers\UserController::class, 'update'])->name('update');
