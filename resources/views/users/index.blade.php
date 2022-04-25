@@ -44,7 +44,7 @@
 
     <table class="table table-bordered table-hover">
     
-    <a href="{{route('users')}}">新規登録先はこちら</a>
+    <a href="//create">新規登録先はこちら</a>
     <!---
     <a class="float-right" href="text.php">修正先はこちら</a>
     --->
