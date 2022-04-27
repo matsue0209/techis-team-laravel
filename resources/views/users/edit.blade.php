@@ -44,6 +44,8 @@
                     <form method="POST" action="{{ url('/user/update') }}">
                         @csrf
 
+                        <input type="hidden" id="id" value="{{$users->id}}" name="id">
+
                         <div class="row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('名前') }}</label>
 

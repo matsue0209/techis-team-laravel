@@ -51,7 +51,11 @@ class UserController extends Controller
         public function update(Request $request){
         
         $user= User::find($request->id);
-        $user->name = $request->input('name');
+        // dd($user);
+        // $user->name = $request->input('name');
+        // $user->telephone = $request->input('telephone');
+        $user->name = $request->name;
+        $user->telphone = $request->tel;
         //保存
         $user->save();
         //リダイレクト
