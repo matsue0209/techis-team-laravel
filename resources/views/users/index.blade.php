@@ -24,56 +24,37 @@
 
 --->
 
-<!DOCTYPE html>
 @extends('layouts.app')
 @section('content')
-<html lang="ja">
-<head>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>会員一覧表示</title>
-</head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>　
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<body>
-    <h1 class="center-block">会員一覧表示</h1>
+
+    <h1 class="center-block">会員一覧</h1>
 
     <table class="table table-bordered table-hover">
-    
-    <a href="//create">新規登録先はこちら</a>
-    <!---
-    <a class="float-right" href="text.php">修正先はこちら</a>
-    --->
 
-      <thead>
+        <thead>
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">名前</th>
                 <th scope="col">電話番号</th>
                 <th scope="col">メールアドレス</th>
+                <th scope="col">住所</th>
             </tr>
-      </thead>
-      <tbody>
-        @foreach ($users as $user)
-            <tr>
-                <td>{{$user->id}}</td>
-                <td>{{$user->name}}</td>
-                <td>{{$user->telephone}}</td>
-                <td>{{$user->email}}</td>
-                <td>
-                    <a href="/user/edit/{{$user->id}}" class="btn btn-danger"><i class="fa fa-btn fa-trash"></i>編集</a> 
-                    <a href="/user/{{$user->id}}" class="btn btn-danger"><i class="fa fa-btn fa-trash"></i>削除</a>     
-                </td>
-            </tr>
-        @endforeach
+        </thead>
+        <tbody>
+            @foreach ($users as $user)
+                <tr>
+                    <td>{{$user->id}}</td>
+                    <td>{{$user->name}}</td>
+                    <td>{{$user->tel}}</td>
+                    <td>{{$user->email}}</td>
+                    <td>{{$user->address}}</td>
+                    <td>
+                        <a href="/user/edit/{{$user->id}}" class="btn btn-danger"><i class="fa fa-btn fa-trash"></i>編集</a> 
+                        <a href="/user/{{$user->id}}" class="btn btn-danger"><i class="fa fa-btn fa-trash"></i>削除</a>     
+                    </td>
+                </tr>
+            @endforeach
 
-      </tbody>
+        </tbody>
     </table>
-
-   
-</body>
-</html>
+@endsection

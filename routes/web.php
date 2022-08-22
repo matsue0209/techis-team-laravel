@@ -14,12 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/user');
 });
 
 
 Route::get('/user', [App\Http\Controllers\UserController::class, 'index'])->name('users');
-Route::get('/user/edit/{user_id}',[App\Http\Controllers\UserController::class,'edit']);
+Route::get('/user/edit/{user_id}',[App\Http\Controllers\UserController::class,'edit'])->name('edit');
 Route::post('/user/update', [App\Http\Controllers\UserController::class, 'update'])->name('update');
 Auth::routes();
 
